@@ -1,11 +1,7 @@
 
-#coding=utf-8
-import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
+
 import json
 import Enity
-
 enity= Enity.Enity()
 enities=enity.getEnity()
 i=1
@@ -14,16 +10,19 @@ s=0
 with open('graph.json', 'wt') as f:
     f.write("{\n\"nodes\":\n[\n")
     for row in enities:
-        if(row[2]=="DATACENTER_FOLDER"or row[2]=="DATACENTER"):
+        print(row[4])
+        if(row[4]==7 or row[4]==8 or row[4]==16 or row[4]==18):
             img="res/image/disk.png"
-        if (row[2] == "VM_FOLDER"or row[2]=="VM_FOLDER"):
+        if (row[4] == 0):
             img  = "res/image/vmware.png"
-        if (row[2] == "HOST_FOLDER"or row[2]=="CLUSTER_COMPUTE_RESOURCE"or row[2]=="RESOURCE POOL"):
+        if (row[4]==1):
             img  ="res/image/host.png"
-        if (row[2] == "NETWORK"or row[2]=="DVSWITCH"or row[2]=="DVPORTGROUP"):
+        if (row[4] ==19 ):
             img ="res/image/Network.png"
 
+
         f.write("{\"name\":"+"\""+row[1]+"\","+"\"image\":"+"\""+img+"\""+'}')
+
         i+=1
 
         if(i<=len(enities)):
