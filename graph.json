@@ -6,10 +6,10 @@
 {"name":"vm","image":"res/image/vmware.png"},
 {"name":"host","image":"res/image/vmware.png"},
 {"name":"datastore","image":"res/image/disk.png"},
-{"name":"network","image":"res/image/Network.png"},
+{"name":"network","image":"res/image/host.png"},
 {"name":"192.168.1.121","image":"res/image/host.png"},
 {"name":"datastore1 (2)","image":"res/image/disk.png"},
-{"name":"VM Network","image":"res/image/Network.png"},
+{"name":"VM Network","image":"res/image/host.png"},
 {"name":"计算集群","image":"res/image/vmware.png"},
 {"name":"Resources","image":"res/image/vmware.png"},
 {"name":"192.168.1.141","image":"res/image/host.png"},
@@ -25,13 +25,13 @@
 {"name":"数据存储中心","image":"res/image/disk.png"},
 {"name":"L135.1","image":"res/image/vmware.png"},
 {"name":"中端资源池","image":"res/image/vmware.png"},
-{"name":"dvSwitch","image":"res/image/Network.png"},
-{"name":"dvSwitch-DVUplinks-41","image":"res/image/Network.png"},
-{"name":"dvPortGroup","image":"res/image/Network.png"},
-{"name":"VM Network","image":"res/image/Network.png"},
-{"name":"vMotion","image":"res/image/Network.png"},
-{"name":"iSCI","image":"res/image/Network.png"},
-{"name":"VMkernel","image":"res/image/Network.png"}
+{"name":"dvSwitch","image":"res/image/host.png"},
+{"name":"dvSwitch-DVUplinks-41","image":"res/image/host.png"},
+{"name":"dvPortGroup","image":"res/image/host.png"},
+{"name":"VM Network","image":"res/image/host.png"},
+{"name":"vMotion","image":"res/image/host.png"},
+{"name":"iSCI","image":"res/image/host.png"},
+{"name":"VMkernel","image":"res/image/host.png"}
 ],
 "links":
 [

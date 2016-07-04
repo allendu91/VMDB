@@ -1,7 +1,6 @@
 #-*- coding:UTF-8 -*-
 import json
 import Enity
-
 enity= Enity.Enity()
 enities=enity.getEnity()
 i=1
@@ -9,6 +8,18 @@ j=1
 source=[]
 target=[]
 id=[]
+imageSwitch={0:"res/image/vmware.png",
+             1:"res/image/host.png",
+             7:"res/image/disk.png",
+             8:"res/image/disk.png",
+             16:"res/image/disk.png",
+             18:"res/image/disk.png",
+             19:"res/image/host.png",
+             14:"res/image/host.png",
+             15:"res/image/host.png",
+             17:"res/image/host.png"}
+
+
 for row in enities:
     source.append(row[0])
     id.append(row[0])
@@ -17,7 +28,7 @@ for row in enities:
         target.append(0)
     else:
         target.append(row[3])
-#转换成图
+
 for x in range(len(id)):
     for y in range(len(target)):
         if(id[x]==source[y]):
@@ -32,14 +43,9 @@ with open('graph.json', 'wt',encoding="UTF-8") as f:
     for row in enities:
 
         img = "res/image/vmware.png"
-        if(row[4]==7 or row[4]==8 or row[4]==16 or row[4]==18):
-            img="res/image/disk.png"
-        if (row[4] == 0):
-            img  = "res/image/vmware.png"
-        if (row[4]==1):
-            img  ="res/image/host.png"
-        if (row[4] ==19 or row[4]==14 or row[4]==15 or row[4]==17):
-            img ="res/image/Network.png"
+        if row[4] in imageSwitch:
+            typeid=row[4]
+            img=imageSwitch[typeid]
 
 
 
