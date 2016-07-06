@@ -1,20 +1,16 @@
-import pymssql
+import PGManage
 
-host = "192.168.1.200"
-port = "1433"
-user = "vm"
-password = "password1!"
-database = "VIM_VCDB"
-charset = "UTF-8"
+user = "porstgres"
+password = "123456"
+database = "VM"
 
-conn = pymssql.connect(host="192.168.1.200", port="1433", user="vm", password="password1!", database="VIM_VCDB",
-                       charset="UTF-8")
-cursor = conn.cursor()
-cursor.execute("SELECT * FROM [VIM_VCDB].[dbo].[VPXV_ENTITY] ")
+PG=PGManage.PG()
+
+PG.getPGConnection()
+cursor=PG.QuerySql("select * from enity")
 row = cursor.fetchone()
-
 while row:
     for i in row:
         print(i)
     row = cursor.fetchone()
-conn.close()
+PG.closeConn()
