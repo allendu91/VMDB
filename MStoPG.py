@@ -3,7 +3,7 @@ from pg import DB
 import  DBManage
 
 MS=DBManage.DBManage(host="192.168.1.200",port="1433",user="vm",password="password1!",database="VIM_VCDB",charset="UTF-8")
-PG = DB(dbname='VM', host='localhost' ,port=5432,user='van',passwd='123456')
+PG = DB(dbname='VM', host='192.168.112' ,port=5432,user='van',passwd='123456')
 MS.getMSSConnetion()
 
 #sql1="SELECT [SAMPLE_TIME] ,[STAT_ID]   ,[STAT_NAME]  ,[STAT_GROUP]  ,[STAT_ROLLUP_TYPE]  ,[COUNTER_ID] ,[ENTITY] ,[DEVICE_NAME] ,[DEVICE_TYPE_NAME]   ,[STAT_VALUE] FROM [VIM_VCDB].[dbo].[VPXV_HIST_STAT_DAILY]"
