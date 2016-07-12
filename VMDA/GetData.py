@@ -9,4 +9,9 @@ rows=cursor.fetchall()
 conn.close()
 Frame=DataFrame(rows,columns=('State_Name','State_Group','State_Type','State_Value'))
 Mydict={}
-CPU=DataFrame.from_dict(Mydict,orient='index').transpose()
+for x in range(len(Frame)):
+    currentName = Frame.iloc[x,0]
+    currentValue=Frame.iloc[x,3]
+    Mydict.setdefault(currentName,[])
+    Mydict[currentName].append(currentValue)
+VM_CPU=DataFrame.from_dict(Mydict,orient='index').transpose()
